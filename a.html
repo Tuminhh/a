@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="image-container">
+        <img src="image.png" alt="Hình minh họa" width="300">
+    </div>
+    
+    <div id="display-text"></div>
+
+    <script>
+        document.getElementById('image-container').addEventListener('click', function() {
+            const textElement = document.getElementById('display-text');
+            textElement.textContent = "Chào mừng các bạn đến với lớp học thiết kế web";
+            textElement.style.display = "block";
+            textElement.style.opacity = 0;
+            let opacity = 0;
+            const fadeIn = setInterval(() => {
+                opacity += 0.05;
+                textElement.style.opacity = opacity;
+                if (opacity >= 1) clearInterval(fadeIn);
+            }, 30);
+        });
+    </script>
+</body>
+</html>
