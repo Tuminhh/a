@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-boxes {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .box {
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            background-color: #e0e0e0;
+            border: 2px solid #999;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-boxes">
+            <div class="box" id="box1" onclick="changeBox1()">
+                <strong>Chào mừng bạn đến với Hâu</strong>
+                <div class="description">Box 1</div>
+            </div>
+            
+            <div class="box" id="box2" onclick="changeBox2()">
+                <strong>Hãy học để thành công</strong>
+                <div class="description">Box 2</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let box1Changed = false;
+        let box2Changed = false;
+        
+        function changeBox1() {
+            const box1 = document.getElementById('box1');
+            
+            if (!box1Changed) {
+                box1.innerHTML = '<strong>Nice to meet you</strong><div class="description">Box 1</div>';
+                box1.style.backgroundColor = '#4CAF50';
+                box1.style.color = 'white';
+                box1.style.borderColor = '#45a049';
+                box1Changed = true;
+            } else {
+                box1.innerHTML = '<strong>Chào mừng bạn đến với Haui</strong><div class="description">Box 1</div>';
+                box1.style.backgroundColor = '#e0e0e0';
+                box1.style.color = 'black';
+                box1.style.borderColor = '#999';
+                box1Changed = false;
+            }
+        }
+        
+        function changeBox2() {
+            const box2 = document.getElementById('box2');
+            
+            if (!box2Changed) {
+                box2.innerHTML = '<strong>Good luck for you</strong><div class="description">Box 2</div>';
+                box2.style.backgroundColor = '#FF8C00'; 
+                box2.style.color = 'white';
+                box2.style.borderColor = '#FF7F00';
+                box2Changed = true;
+            } else {
+                box2.innerHTML = '<strong>Hãy học để thành công</strong><div class="description">Box 2</div>';
+                box2.style.backgroundColor = '#e0e0e0';
+                box2.style.color = 'black';
+                box2.style.borderColor = '#999';
+                box2Changed = false;
+            }
+        }
+    </script>
+</body>
+</html>
